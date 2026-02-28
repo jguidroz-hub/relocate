@@ -23,6 +23,14 @@ const posts = [
     tag: 'Guide',
     readTime: '8 min read',
   },
+  {
+    slug: 'moving-abroad-with-kids-checklist',
+    title: 'Moving Abroad with Kids: The Complete Family Relocation Checklist',
+    description: 'Everything you need to do before, during, and after an international family move — in the right order.',
+    date: 'February 28, 2026',
+    tag: 'Checklist',
+    readTime: '12 min read',
+  },
 ];
 
 export default function BlogIndex() {
