@@ -14,6 +14,26 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Relocate by Greenbelt',
+  description: 'AI-powered relocation reports for families moving abroad. Schools, safety, taxes, cost of living — matched to your family.',
+  url: 'https://relocate.projectgreenbelt.com',
+  provider: {
+    '@type': 'Organization',
+    name: 'Greenbelt Ventures',
+    url: 'https://projectgreenbelt.com',
+  },
+  offers: {
+    '@type': 'Offer',
+    price: '149',
+    priceCurrency: 'USD',
+    description: 'Personalized AI relocation report per city',
+  },
+  areaServed: ['Colombia', 'Portugal', 'Spain', 'Mexico', 'Costa Rica', 'Ecuador'],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -22,6 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
