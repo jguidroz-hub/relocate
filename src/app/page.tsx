@@ -155,6 +155,12 @@ export default function Home() {
             >
               View Sample Report
             </a>
+            <a
+              href="/quiz"
+              className="inline-flex items-center gap-2 px-6 py-4 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition-colors"
+            >
+              📋 Take the Readiness Quiz
+            </a>
           </div>
         </div>
       </section>
