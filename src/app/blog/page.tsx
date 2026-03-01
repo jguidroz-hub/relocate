@@ -24,6 +24,14 @@ const posts = [
     readTime: '14 min read',
   },
   {
+    slug: 'mexico-city-family-guide',
+    title: 'Moving to Mexico City with Kids: Neighborhoods, Schools & Real Costs 2026',
+    description: 'Polanco, Condesa, Coyoacán — where to live, which schools, safety reality, and monthly budgets for CDMX.',
+    date: 'March 1, 2026',
+    tag: 'City Guide',
+    readTime: '13 min read',
+  },
+  {
     slug: 'cost-of-living-comparison-tools',
     title: 'Cost of Living Comparison: What Standard Calculators Miss for Families Moving Abroad',
     description: 'Numbeo says Lisbon is 40% cheaper. But when you add school tuition and health insurance, the picture changes dramatically.',
