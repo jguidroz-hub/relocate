@@ -24,6 +24,14 @@ const posts = [
     readTime: '14 min read',
   },
   {
+    slug: 'best-country-to-move-to-with-family',
+    title: 'Best Country to Move to with a Family in 2026: Ranked by What Actually Matters',
+    description: 'Colombia vs Portugal vs Spain vs Mexico vs Costa Rica vs Ecuador — compared across 8 factors families actually care about.',
+    date: 'March 1, 2026',
+    tag: 'Comparison',
+    readTime: '18 min read',
+  },
+  {
     slug: 'spain-barcelona-family-guide',
     title: 'Moving to Spain with Kids: Barcelona & Beyond — 2026 Family Guide',
     description: 'Barcelona vs Valencia vs Madrid vs Málaga — schools, visas, digital nomad tax, and honest costs.',
