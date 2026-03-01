@@ -48,6 +48,14 @@ const posts = [
     readTime: '13 min read',
   },
   {
+    slug: 'costa-rica-family-guide',
+    title: 'Moving to Costa Rica with Kids: The Honest 2026 Guide',
+    description: 'Escazú, Santa Ana, beach towns — schools, real costs (it\'s not cheap), residency, and pura vida reality.',
+    date: 'March 1, 2026',
+    tag: 'City Guide',
+    readTime: '12 min read',
+  },
+  {
     slug: 'cost-of-living-comparison-tools',
     title: 'Cost of Living Comparison: What Standard Calculators Miss for Families Moving Abroad',
     description: 'Numbeo says Lisbon is 40% cheaper. But when you add school tuition and health insurance, the picture changes dramatically.',
