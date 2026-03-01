@@ -8,6 +8,22 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'medellin-relocation-guide',
+    title: 'Moving to Medellín with Kids: The Complete 2026 Family Guide',
+    description: 'Everything American families need to know — schools, neighborhoods, costs, visas, and honest downsides.',
+    date: 'March 1, 2026',
+    tag: 'City Guide',
+    readTime: '15 min read',
+  },
+  {
+    slug: 'portugal-family-relocation',
+    title: 'Moving to Portugal with Kids: Schools, Visas & Cost of Living 2026',
+    description: 'D7 visa, IFICI tax regime, international schools in Cascais and Lisbon, and real monthly budgets.',
+    date: 'March 1, 2026',
+    tag: 'City Guide',
+    readTime: '14 min read',
+  },
+  {
     slug: 'cost-of-living-comparison-tools',
     title: 'Cost of Living Comparison: What Standard Calculators Miss for Families Moving Abroad',
     description: 'Numbeo says Lisbon is 40% cheaper. But when you add school tuition and health insurance, the picture changes dramatically.',
