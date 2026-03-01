@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
+import {
+  sendEmail,
+  buildOrderNotificationEmail,
+} from "@/lib/email";
 
 function getStripe() {
   return new Stripe(process.env.STRIPE_SECRET_KEY!, {
@@ -23,8 +27,9 @@ export async function POST(req: NextRequest) {
       sig,
       process.env.STRIPE_WEBHOOK_SECRET!
     );
-  } catch (err: any) {
-    console.error("[Stripe Webhook] Signature verification failed:", err.message);
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : "Unknown error";
+    console.error("[Stripe Webhook] Signature verification failed:", message);
     return NextResponse.json({ error: "Invalid signature" }, { status: 400 });
   }
 
@@ -32,48 +37,53 @@ export async function POST(req: NextRequest) {
     const session = event.data.object as Stripe.Checkout.Session;
     const { city, country, familySize, childAges } = session.metadata || {};
     const email = session.customer_email;
-    const amount = session.amount_total ? (session.amount_total / 100).toFixed(2) : "unknown";
+    const amount = session.amount_total
+      ? (session.amount_total / 100).toFixed(2)
+      : "unknown";
 
     console.log(`[Order] New relocation report order!`);
     console.log(`  Email: ${email}`);
     console.log(`  City: ${city}, ${country}`);
     console.log(`  Family size: ${familySize}, Child ages: ${childAges}`);
     console.log(`  Amount: $${amount}`);
-    console.log(`  Session ID: ${session.id}`);
 
-    // Send notification email to Jon
-    if (process.env.NOTIFICATION_EMAIL) {
-      try {
-        // Use Resend if available, otherwise just log
-        if (process.env.RESEND_API_KEY) {
-          await fetch("https://api.resend.com/emails", {
-            method: "POST",
-            headers: {
-              Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              from: "Relocate <noreply@projectgreenbelt.com>",
-              to: process.env.NOTIFICATION_EMAIL,
-              subject: `🎉 New Relocate Order: ${city}, ${country} ($${amount})`,
-              html: `
-                <h2>New Relocation Report Order</h2>
-                <p><strong>Customer:</strong> ${email}</p>
-                <p><strong>City:</strong> ${city}, ${country}</p>
-                <p><strong>Family Size:</strong> ${familySize || "Not specified"}</p>
-                <p><strong>Child Ages:</strong> ${childAges || "Not specified"}</p>
-                <p><strong>Amount:</strong> $${amount}</p>
-                <p><strong>Stripe Session:</strong> ${session.id}</p>
-                <hr/>
-                <p>Generate the report and send it to ${email} within 24 hours.</p>
-              `,
-            }),
-          });
-          console.log("[Order] Notification email sent");
-        }
-      } catch (err) {
-        console.error("[Order] Failed to send notification:", err);
-      }
+    // 1. Send notification to Jon
+    if (process.env.NOTIFICATION_EMAIL && process.env.RESEND_API_KEY) {
+      await sendEmail({
+        to: process.env.NOTIFICATION_EMAIL,
+        subject: `🎉 New Relocate Order: ${city}, ${country} ($${amount})`,
+        html: buildOrderNotificationEmail(
+          email || "unknown",
+          city || "unknown",
+          country || "unknown",
+          familySize || "",
+          childAges || "",
+          amount,
+          session.id
+        ),
+      });
+    }
+
+    // 2. Auto-trigger report generation (fire and forget)
+    if (email && city && country && process.env.REPORT_GENERATION_SECRET) {
+      const baseUrl =
+        process.env.NEXT_PUBLIC_URL || "https://relocate.projectgreenbelt.com";
+      fetch(`${baseUrl}/api/generate-report`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${process.env.REPORT_GENERATION_SECRET}`,
+        },
+        body: JSON.stringify({
+          city,
+          country,
+          email,
+          familySize: familySize || "",
+          childAges: childAges || "",
+        }),
+      }).catch((err) => {
+        console.error("[Order] Failed to trigger report generation:", err);
+      });
     }
   }
 
