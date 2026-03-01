@@ -24,6 +24,14 @@ const posts = [
     readTime: '14 min read',
   },
   {
+    slug: 'spain-barcelona-family-guide',
+    title: 'Moving to Spain with Kids: Barcelona & Beyond — 2026 Family Guide',
+    description: 'Barcelona vs Valencia vs Madrid vs Málaga — schools, visas, digital nomad tax, and honest costs.',
+    date: 'March 1, 2026',
+    tag: 'City Guide',
+    readTime: '14 min read',
+  },
+  {
     slug: 'mexico-city-family-guide',
     title: 'Moving to Mexico City with Kids: Neighborhoods, Schools & Real Costs 2026',
     description: 'Polanco, Condesa, Coyoacán — where to live, which schools, safety reality, and monthly budgets for CDMX.',
