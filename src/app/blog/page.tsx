@@ -56,6 +56,14 @@ const posts = [
     readTime: '12 min read',
   },
   {
+    slug: 'how-ai-relocation-reports-work',
+    title: 'How AI Relocation Reports Work: Our Research Process Explained',
+    description: 'Behind the curtain: how we generate personalized 50+ page reports using GPT-4 and why it\'s different from generic AI.',
+    date: 'March 1, 2026',
+    tag: 'Behind the Scenes',
+    readTime: '8 min read',
+  },
+  {
     slug: 'cost-of-living-comparison-tools',
     title: 'Cost of Living Comparison: What Standard Calculators Miss for Families Moving Abroad',
     description: 'Numbeo says Lisbon is 40% cheaper. But when you add school tuition and health insurance, the picture changes dramatically.',
