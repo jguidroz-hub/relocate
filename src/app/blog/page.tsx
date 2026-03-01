@@ -8,6 +8,14 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    slug: 'cost-of-living-comparison-tools',
+    title: 'Cost of Living Comparison: What Standard Calculators Miss for Families Moving Abroad',
+    description: 'Numbeo says Lisbon is 40% cheaper. But when you add school tuition and health insurance, the picture changes dramatically.',
+    date: 'February 28, 2026',
+    tag: 'Finance',
+    readTime: '9 min read',
+  },
+  {
     slug: 'best-cities-for-american-families-abroad',
     title: 'Best Cities for American Families Moving Abroad in 2026',
     description: 'From Medellín to Lisbon: data-driven picks for families seeking quality schools, safety, and lower cost of living.',

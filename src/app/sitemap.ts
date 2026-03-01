@@ -9,5 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog/best-cities-for-american-families-abroad`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/blog/international-school-guide`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/blog/moving-abroad-with-kids-checklist`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE_URL}/blog/cost-of-living-comparison-tools`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
   ];
 }
