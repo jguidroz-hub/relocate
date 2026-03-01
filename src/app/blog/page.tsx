@@ -56,6 +56,14 @@ const posts = [
     readTime: '12 min read',
   },
   {
+    slug: 'ecuador-family-guide',
+    title: 'Moving to Ecuador with Kids: Cuenca, Quito & the Dollar Advantage',
+    description: 'Lowest cost of living, US dollar, stunning nature — but fewer schools and weaker infrastructure. The honest guide.',
+    date: 'March 1, 2026',
+    tag: 'City Guide',
+    readTime: '11 min read',
+  },
+  {
     slug: 'how-ai-relocation-reports-work',
     title: 'How AI Relocation Reports Work: Our Research Process Explained',
     description: 'Behind the curtain: how we generate personalized 50+ page reports using GPT-4 and why it\'s different from generic AI.',

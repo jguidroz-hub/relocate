@@ -19,5 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/blog/costa-rica-family-guide`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${BASE_URL}/blog/how-ai-relocation-reports-work`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE_URL}/quiz`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${BASE_URL}/blog/ecuador-family-guide`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
   ];
 }
