@@ -141,13 +141,21 @@ export default function Home() {
             <span className="flex items-center gap-2">📄 50+ page PDF report</span>
           </div>
 
-          <a
-            href="#order"
-            className="inline-flex items-center gap-2 px-10 py-4 rounded-lg text-lg font-semibold bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 transition-all shadow-xl shadow-emerald-500/20"
-          >
-            Get Your Report — $149
-            <span className="text-xl">→</span>
-          </a>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="#order"
+              className="inline-flex items-center gap-2 px-10 py-4 rounded-lg text-lg font-semibold bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-600 hover:to-cyan-600 transition-all shadow-xl shadow-emerald-500/20"
+            >
+              Get Your Report — $149
+              <span className="text-xl">→</span>
+            </a>
+            <a
+              href="/sample-report"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-lg text-lg font-medium border border-white/20 hover:bg-white/5 transition-colors"
+            >
+              View Sample Report
+            </a>
+          </div>
         </div>
       </section>
 
