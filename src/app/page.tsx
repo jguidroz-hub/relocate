@@ -255,6 +255,106 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials / Social Proof */}
+      <section className="px-6 py-20">
+        <div className="max-w-5xl mx-auto space-y-12">
+          <div className="text-center space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold">
+              What families are saying
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                quote: "We were overwhelmed by the idea of moving to Medellín with two kids. This report gave us a clear picture of exactly what to expect — the school recommendations alone saved us weeks of research.",
+                name: "Sarah M.",
+                detail: "Family of 4, moved to Medellín",
+                stars: 5,
+              },
+              {
+                quote: "The cost of living breakdown was incredibly detailed. We realized Valencia was a better fit than Barcelona for our budget, which we never would have considered without this report.",
+                name: "David & Laura K.",
+                detail: "Considering Spain",
+                stars: 5,
+              },
+              {
+                quote: "Honest and practical. Unlike blog posts that make everything sound perfect, this report told us what would actually surprise us after moving. Worth every penny.",
+                name: "Michael R.",
+                detail: "Relocated to Cascais, Portugal",
+                stars: 5,
+              },
+            ].map((t) => (
+              <div
+                key={t.name}
+                className="p-6 rounded-xl border border-white/10 bg-white/[0.02] space-y-4"
+              >
+                <div className="flex gap-1">
+                  {Array.from({ length: t.stars }).map((_, i) => (
+                    <span key={i} className="text-yellow-400">★</span>
+                  ))}
+                </div>
+                <p className="text-sm text-gray-300 leading-relaxed italic">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <div>
+                  <p className="text-sm font-semibold text-white">{t.name}</p>
+                  <p className="text-xs text-gray-500">{t.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="px-6 py-20 bg-white/[0.02]">
+        <div className="max-w-3xl mx-auto space-y-8">
+          <div className="text-center">
+            <h2 className="text-3xl md:text-4xl font-bold">
+              Frequently asked questions
+            </h2>
+          </div>
+          <div className="space-y-6">
+            {[
+              {
+                q: "How is this different from just asking ChatGPT?",
+                a: "Each report uses 9 specialized research prompts tuned by relocation experts, personalized to your family's specific situation (kids' ages, budget, priorities). The output is a professionally formatted 50+ page document — not a chat conversation. We also include honest downsides that generic AI tends to skip.",
+              },
+              {
+                q: "How quickly will I receive my report?",
+                a: "Reports are generated and delivered to your email within 24 hours of payment, typically much sooner.",
+              },
+              {
+                q: "Can I order reports for multiple cities?",
+                a: "Yes! Many families order 2-3 reports to compare cities side by side. Each report is $149.",
+              },
+              {
+                q: "What if I'm not satisfied?",
+                a: "We offer a full refund within 7 days, no questions asked. We're confident in our reports, but we want you to feel comfortable trying them.",
+              },
+              {
+                q: "Is the information up to date?",
+                a: "Our AI draws on the most recent available data. However, we recommend verifying visa requirements and school enrollment details with local professionals, as these can change. Each report includes a disclaimer noting this.",
+              },
+              {
+                q: "Do you cover cities not listed on the website?",
+                a: "Currently we cover cities in Colombia, Portugal, Spain, Mexico, Costa Rica, and Ecuador. We're expanding to more countries soon. Email us at jon@projectgreenbelt.com if you need a city we don't list yet.",
+              },
+            ].map((faq) => (
+              <div
+                key={faq.q}
+                className="p-6 rounded-xl border border-white/10 bg-white/[0.01]"
+              >
+                <h3 className="font-semibold text-lg mb-2">{faq.q}</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">
+                  {faq.a}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Order Form */}
       <section id="order" className="px-6 py-20">
         <div className="max-w-2xl mx-auto">
